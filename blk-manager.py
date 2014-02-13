@@ -34,7 +34,7 @@ if dev == []: # Aucun périph
 elif len(dev) == 1: # Un seul périph
 	k = dev[0]
 	if len(k) >= 7:
-		item ( 'Ouvrir', 'thunar '+k[6] )
+		item ( 'Ouvrir', 'xdg-open '+k[6] )
 		item ('Retirer', 'sh -c "udevil umount '+k[6]+"; notify-send 'Retiré avec succès !' -i ~/.config/openbox/content.png" + '"')
 	else:
 		emp = "/media/" + k[0]
@@ -44,7 +44,7 @@ else:
 	for k in dev: # Plusieurs périphs
 		if len(k) >= 7:
 			print( '<menu id="'+k[0] + ' (' + k[3] + ')" label="' +k[0] + ' (' + k[3] + ')">')
-			item ( 'Ouvrir', 'thunar '+k[6] )
+			item ( 'Ouvrir', 'xdg-open '+k[6] )
 			item ('Retirer', 'sh -c "udevil umount '+k[6]+"; notify-send 'Retiré avec succès !' -i ~/.config/openbox/content.png" + '"')
 			print( '</menu>')
 		else:
